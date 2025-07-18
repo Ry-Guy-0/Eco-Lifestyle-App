@@ -1,0 +1,560 @@
+/* Meal Planner Styles */
+.meal-planner-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Weekly Calendar */
+.meal-calendar {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--light-gray);
+}
+
+.calendar-header h3 {
+    font-size: 1.3rem;
+    color: var(--primary-green);
+    margin: 0;
+}
+
+.week-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.day-column {
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+    min-width: 180px;
+}
+
+.day-column:hover {
+    border-color: var(--light-green);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.day-header {
+    background: linear-gradient(135deg, var(--accent-green), var(--light-green));
+    color: white;
+    padding: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.day-header h4 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.eco-score-day {
+    background: rgba(255,255,255,0.2);
+    padding: 0.2rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.meal-slots {
+    padding: 0.5rem;
+}
+
+.meal-slot {
+    margin-bottom: 0.5rem;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.meal-label {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: var(--gray-text);
+    padding: 0.3rem 0.5rem;
+    background: var(--light-gray);
+}
+
+.meal-content {
+    padding: 0.5rem;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.meal-content.empty {
+    border: 2px dashed var(--light-gray);
+    border-radius: 5px;
+}
+
+.meal-content[data-planned="true"] {
+    background: rgba(76, 175, 80, 0.05);
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.meal-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    width: 100%;
+}
+
+.meal-name {
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.add-meal-btn {
+    background: transparent;
+    border: none;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 3px;
+    transition: var(--transition);
+    width: 100%;
+}
+
+.add-meal-btn:hover {
+    background: var(--light-green);
+    color: white;
+}
+
+.edit-meal {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.5rem;
+    margin-top: 0.3rem;
+}
+
+/* Eco Badges */
+.eco-badge {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.eco-badge.eco-high {
+    background: rgba(76, 175, 80, 0.2);
+    color: var(--accent-green);
+}
+
+.eco-badge.eco-medium {
+    background: rgba(255, 152, 0, 0.2);
+    color: #ff9800;
+}
+
+.eco-badge.eco-low {
+    background: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+}
+
+/* Recipe Suggestions */
+.recipe-suggestions {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.recipe-suggestions h4 {
+    margin-bottom: 1rem;
+    color: var(--primary-green);
+}
+
+.recipe-filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--light-gray);
+    background: var(--white);
+    color: var(--gray-text);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--accent-green);
+    color: white;
+    border-color: var(--accent-green);
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.recipe-card {
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.recipe-card:hover {
+    border-color: var(--light-green);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.recipe-image {
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    background: var(--light-gray);
+}
+
+.recipe-info {
+    padding: 1rem;
+}
+
+.recipe-info h5 {
+    margin: 0 0 0.5rem 0;
+    color: var(--primary-green);
+}
+
+.recipe-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.prep-time {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+}
+
+.recipe-description {
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+}
+
+.sustainability-info {
+    margin-bottom: 1rem;
+}
+
+.sustainability-info small {
+    color: var(--accent-green);
+    font-weight: 500;
+}
+
+.add-to-plan {
+    width: 100%;
+}
+
+/* Shopping Integration */
+.shopping-integration {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.shopping-integration h4 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.shopping-summary {
+    background: var(--light-gray);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.summary-item:last-child {
+    margin-bottom: 0;
+}
+
+.summary-label {
+    color: var(--gray-text);
+}
+
+.summary-value {
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+.summary-value.eco-positive {
+    color: var(--accent-green);
+}
+
+.shopping-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.shopping-actions .btn {
+    flex: 1;
+    min-width: 150px;
+}
+
+/* Meal Insights */
+.meal-insights {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+}
+
+.meal-insights h4 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1rem;
+}
+
+.insight-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    background: var(--light-gray);
+    border-radius: 8px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.insight-card:hover {
+    background: var(--background-green);
+    transform: translateY(-2px);
+}
+
+.insight-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.insight-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent-green);
+    margin-bottom: 0.3rem;
+}
+
+.insight-label {
+    font-size: 0.8rem;
+    color: var(--gray-text);
+    line-height: 1.2;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: var(--white);
+    border-radius: var(--border-radius);
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: var(--primary-green);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--gray-text);
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    color: var(--primary-green);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+.modal-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--light-gray);
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+}
+
+/* Form Styles */
+.meal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: var(--primary-green);
+}
+
+.form-group input {
+    padding: 0.8rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+}
+
+.quick-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.5rem;
+}
+
+.quick-option {
+    padding: 0.5rem;
+    border: 1px solid var(--light-gray);
+    background: var(--white);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.quick-option:hover {
+    border-color: var(--accent-green);
+    background: var(--background-green);
+}
+
+.preference-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.preference-checks label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.preference-checks input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .week-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        overflow-x: auto;
+    }
+
+    .day-column {
+        min-width: 160px;
+    }
+
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .shopping-actions {
+        flex-direction: column;
+    }
+
+    .insights-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modal-content {
+        margin: 1rem;
+        max-height: calc(100vh - 2rem);
+    }
+
+    .modal-footer {
+        flex-direction: column;
+    }
+
+    .quick-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} 

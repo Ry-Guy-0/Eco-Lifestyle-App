@@ -1,0 +1,154 @@
+{
+  "name": "GreenHabit - Your Complete Eco-Companion",
+  "short_name": "GreenHabit",
+  "description": "Track your sustainability journey with smart features for meal planning, carbon tracking, and eco-challenges.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#e8f5e8",
+  "theme_color": "#4caf50",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["lifestyle", "productivity", "utilities"],
+  "icons": [
+    {
+      "src": "icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Scan Item",
+      "short_name": "Scan",
+      "description": "Quickly scan and add items to inventory",
+      "url": "/#scan",
+      "icons": [{ "src": "icons/shortcut-scan.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Plan Meals",
+      "short_name": "Meals",
+      "description": "Plan eco-friendly meals for the week",
+      "url": "/#meal-planner",
+      "icons": [{ "src": "icons/shortcut-meals.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Track Carbon",
+      "short_name": "Carbon",
+      "description": "Log and track your carbon footprint",
+      "url": "/#carbon-calculator",
+      "icons": [{ "src": "icons/shortcut-carbon.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Challenges",
+      "short_name": "Challenges",
+      "description": "View and join eco challenges",
+      "url": "/#challenges",
+      "icons": [{ "src": "icons/shortcut-challenges.png", "sizes": "96x96" }]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "screenshots/dashboard-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "GreenHabit Dashboard - Desktop View"
+    },
+    {
+      "src": "screenshots/dashboard-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "GreenHabit Dashboard - Mobile View"
+    },
+    {
+      "src": "screenshots/meal-planner.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Eco-Friendly Meal Planner"
+    },
+    {
+      "src": "screenshots/carbon-tracker.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Carbon Footprint Tracker"
+    }
+  ],
+  "share_target": {
+    "action": "/#share",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "protocol_handlers": [
+    {
+      "protocol": "web+greenhabit",
+      "url": "/#handler=%s"
+    }
+  ],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.greenhabit.app",
+      "id": "com.greenhabit.app"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/greenhabit/id123456789",
+      "id": "123456789"
+    }
+  ],
+  "prefer_related_applications": false
+} 

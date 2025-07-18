@@ -1,0 +1,254 @@
+<!-- Meal Planning Feature -->
+<div class="feature-card" id="meal-planner">
+    <div class="feature-header">
+        <div class="feature-icon">🍽️</div>
+        <div class="feature-title">Eco-Friendly Meal Planner</div>
+    </div>
+    
+    <div class="meal-planner-container">
+        <!-- Weekly Calendar View -->
+        <div class="meal-calendar">
+            <div class="calendar-header">
+                <button class="btn btn-outline" id="prev-week">← Previous</button>
+                <h3 id="current-week">Week of Jan 15-21, 2024</h3>
+                <button class="btn btn-outline" id="next-week">Next →</button>
+            </div>
+            
+            <div class="week-grid">
+                <div class="day-column" data-day="monday">
+                    <div class="day-header">
+                        <h4>Monday</h4>
+                        <span class="eco-score-day">🌱 85</span>
+                    </div>
+                    <div class="meal-slots">
+                        <div class="meal-slot" data-meal="breakfast">
+                            <div class="meal-label">Breakfast</div>
+                            <div class="meal-content" data-planned="true">
+                                <div class="meal-item">
+                                    <span class="meal-name">Overnight Oats with Berries</span>
+                                    <span class="eco-badge eco-high">🌱 High</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="meal-slot" data-meal="lunch">
+                            <div class="meal-label">Lunch</div>
+                            <div class="meal-content" data-planned="true">
+                                <div class="meal-item">
+                                    <span class="meal-name">Quinoa Buddha Bowl</span>
+                                    <span class="eco-badge eco-high">🌱 High</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="meal-slot" data-meal="dinner">
+                            <div class="meal-label">Dinner</div>
+                            <div class="meal-content empty">
+                                <button class="add-meal-btn">+ Add Meal</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="day-column" data-day="tuesday">
+                    <div class="day-header">
+                        <h4>Tuesday</h4>
+                        <span class="eco-score-day">🌱 78</span>
+                    </div>
+                    <div class="meal-slots">
+                        <div class="meal-slot" data-meal="breakfast">
+                            <div class="meal-label">Breakfast</div>
+                            <div class="meal-content empty">
+                                <button class="add-meal-btn">+ Add Meal</button>
+                            </div>
+                        </div>
+                        <div class="meal-slot" data-meal="lunch">
+                            <div class="meal-label">Lunch</div>
+                            <div class="meal-content empty">
+                                <button class="add-meal-btn">+ Add Meal</button>
+                            </div>
+                        </div>
+                        <div class="meal-slot" data-meal="dinner">
+                            <div class="meal-label">Dinner</div>
+                            <div class="meal-content" data-planned="true">
+                                <div class="meal-item">
+                                    <span class="meal-name">Lentil Curry with Brown Rice</span>
+                                    <span class="eco-badge eco-high">🌱 High</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- More days would be generated dynamically -->
+            </div>
+        </div>
+
+        <!-- Recipe Suggestions -->
+        <div class="recipe-suggestions">
+            <h4>🌿 Eco-Friendly Recipe Suggestions</h4>
+            <div class="recipe-filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="vegan">Vegan</button>
+                <button class="filter-btn" data-filter="vegetarian">Vegetarian</button>
+                <button class="filter-btn" data-filter="local">Local Ingredients</button>
+                <button class="filter-btn" data-filter="seasonal">Seasonal</button>
+            </div>
+            
+            <div class="recipe-grid">
+                <div class="recipe-card" data-category="vegan seasonal">
+                    <div class="recipe-image">🥗</div>
+                    <div class="recipe-info">
+                        <h5>Rainbow Buddha Bowl</h5>
+                        <div class="recipe-meta">
+                            <span class="prep-time">⏱️ 20 min</span>
+                            <span class="eco-badge eco-high">🌱 High Impact</span>
+                        </div>
+                        <div class="recipe-description">
+                            Colorful mix of seasonal vegetables, quinoa, and tahini dressing
+                        </div>
+                        <div class="sustainability-info">
+                            <small>💧 Low water usage • 🚚 Local ingredients • ♻️ Zero waste</small>
+                        </div>
+                        <button class="btn btn-small add-to-plan">Add to Plan</button>
+                    </div>
+                </div>
+                
+                <div class="recipe-card" data-category="vegetarian local">
+                    <div class="recipe-image">🍝</div>
+                    <div class="recipe-info">
+                        <h5>Local Veggie Pasta</h5>
+                        <div class="recipe-meta">
+                            <span class="prep-time">⏱️ 15 min</span>
+                            <span class="eco-badge eco-medium">🌱 Medium Impact</span>
+                        </div>
+                        <div class="recipe-description">
+                            Whole wheat pasta with farmer's market vegetables
+                        </div>
+                        <div class="sustainability-info">
+                            <small>🚚 <2km transport • 🌾 Organic ingredients</small>
+                        </div>
+                        <button class="btn btn-small add-to-plan">Add to Plan</button>
+                    </div>
+                </div>
+
+                <div class="recipe-card" data-category="vegan local">
+                    <div class="recipe-image">🍲</div>
+                    <div class="recipe-info">
+                        <h5>Hearty Lentil Stew</h5>
+                        <div class="recipe-meta">
+                            <span class="prep-time">⏱️ 35 min</span>
+                            <span class="eco-badge eco-high">🌱 High Impact</span>
+                        </div>
+                        <div class="recipe-description">
+                            Protein-rich lentils with local root vegetables
+                        </div>
+                        <div class="sustainability-info">
+                            <small>🌱 Plant protein • 💧 Drought-resistant crops • 🏠 Local farmers</small>
+                        </div>
+                        <button class="btn btn-small add-to-plan">Add to Plan</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Shopping List Integration -->
+        <div class="shopping-integration">
+            <h4>📝 Smart Shopping List</h4>
+            <div class="shopping-summary">
+                <div class="summary-item">
+                    <span class="summary-label">This Week's Ingredients:</span>
+                    <span class="summary-value">23 items</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Estimated Cost:</span>
+                    <span class="summary-value">€47.50</span>
+                </div>
+                <div class="summary-item">
+                    <span class="summary-label">Carbon Footprint:</span>
+                    <span class="summary-value eco-positive">-2.3 kg CO₂</span>
+                </div>
+            </div>
+            
+            <div class="shopping-actions">
+                <button class="btn" id="generate-shopping-list">Generate Shopping List</button>
+                <button class="btn btn-outline" id="find-local-stores">Find Local Stores</button>
+            </div>
+        </div>
+
+        <!-- Nutrition & Sustainability Insights -->
+        <div class="meal-insights">
+            <h4>📊 Weekly Insights</h4>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <div class="insight-icon">🌱</div>
+                    <div class="insight-content">
+                        <div class="insight-value">85%</div>
+                        <div class="insight-label">Plant-based meals</div>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">🚚</div>
+                    <div class="insight-content">
+                        <div class="insight-value">12 km</div>
+                        <div class="insight-label">Avg food miles</div>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">💧</div>
+                    <div class="insight-content">
+                        <div class="insight-value">-840L</div>
+                        <div class="insight-label">Water saved vs avg diet</div>
+                    </div>
+                </div>
+                <div class="insight-card">
+                    <div class="insight-icon">♻️</div>
+                    <div class="insight-content">
+                        <div class="insight-value">95%</div>
+                        <div class="insight-label">Zero-waste recipes</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Meal Planning Modal (for adding meals) -->
+<div id="meal-modal" class="modal hidden">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Add Meal</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="meal-form">
+                <div class="form-group">
+                    <label for="meal-name">Meal Name</label>
+                    <input type="text" id="meal-name" placeholder="Enter meal name or search recipes">
+                </div>
+                
+                <div class="form-group">
+                    <label>Quick Add Options</label>
+                    <div class="quick-options">
+                        <button class="quick-option" data-meal="Avocado Toast">🥑 Avocado Toast</button>
+                        <button class="quick-option" data-meal="Green Smoothie">🥬 Green Smoothie</button>
+                        <button class="quick-option" data-meal="Veggie Wrap">🌯 Veggie Wrap</button>
+                        <button class="quick-option" data-meal="Quinoa Salad">🥗 Quinoa Salad</button>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Sustainability Preferences</label>
+                    <div class="preference-checks">
+                        <label><input type="checkbox" checked> Local ingredients preferred</label>
+                        <label><input type="checkbox" checked> Seasonal produce only</label>
+                        <label><input type="checkbox"> Vegan options</label>
+                        <label><input type="checkbox"> Zero waste cooking</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline" id="cancel-meal">Cancel</button>
+            <button class="btn" id="save-meal">Add Meal</button>
+        </div>
+    </div>
+</div> 

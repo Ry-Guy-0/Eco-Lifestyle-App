@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenHabit - Your Complete Eco-Companion</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/meal-planner.css">
+    <link rel="stylesheet" href="css/carbon-calculator.css">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <meta name="theme-color" content="#4caf50">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="GreenHabit - Your complete sustainability companion. Track your eco-footprint, plan meals, calculate carbon emissions, and build sustainable habits.">
+    <meta name="keywords" content="sustainability, eco-friendly, carbon footprint, meal planning, green living, environment">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="GreenHabit - Your Complete Eco-Companion">
+    <meta property="og:description" content="Track your sustainability journey with smart features for meal planning, carbon tracking, and eco-challenges.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://greenhabit.app">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/main.css" as="style">
+    <link rel="preload" href="js/app.js" as="script">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav-bar">
+                <a href="#dashboard" class="logo">GreenHabit</a>
+                <ul class="nav-links">
+                    <li><a href="#dashboard">Dashboard</a></li>
+                    <li><a href="#meal-planner">Meal Planner</a></li>
+                    <li><a href="#carbon-calculator">Carbon Tracker</a></li>
+                    <li><a href="#inventory">Inventory</a></li>
+                    <li><a href="#challenges">Challenges</a></li>
+                    <li><a href="#community">Community</a></li>
+                </ul>
+                <div class="user-profile">
+                    <div class="profile-img">AJ</div>
+                    <div class="user-info">
+                        <span class="user-name">Alex Johnson</span>
+                        <span class="user-status">Eco Warrior</span>
+                    </div>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard" id="dashboard">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <h1 class="welcome-title">Welcome back, Alex! 🌱</h1>
+                <div class="eco-score">
+                    <div class="score-circle">
+                        <div class="score-text">78</div>
+                    </div>
+                    <div class="score-details">
+                        <h3>Your Eco Score</h3>
+                        <p>Great progress this week! You've reduced your carbon footprint by <strong>12%</strong></p>
+                        <p>Keep up the sustainable habits! 🌿</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" data-stat="itemsTracked">143</div>
+                    <div class="stat-label">Items Tracked</div>
+                    <div class="stat-trend positive">+12 this week</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-stat="ecoSwaps">67</div>
+                    <div class="stat-label">Eco-Swaps Made</div>
+                    <div class="stat-trend positive">+5 this month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-stat="challengesCompleted">23</div>
+                    <div class="stat-label">Challenges Completed</div>
+                    <div class="stat-trend positive">+3 this week</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-stat="moneySaved">€89</div>
+                    <div class="stat-label">Money Saved</div>
+                    <div class="stat-trend positive">+€23 this month</div>
+                </div>
+            </div>
+
+            <!-- Smart Notifications -->
+            <section class="notifications-panel">
+                <h2>🔔 Smart Nudges & Notifications</h2>
+                <div class="notification-item notification-warning">
+                    <div class="notification-icon">⚠️</div>
+                    <div class="notification-content">
+                        <strong>Pantry Alert!</strong>
+                        <p>You have 3 unopened bags of rice in your pantry. Consider using them before buying more!</p>
+                        <div class="notification-time">2 hours ago</div>
+                    </div>
+                </div>
+                <div class="notification-item notification-success">
+                    <div class="notification-icon">🌱</div>
+                    <div class="notification-content">
+                        <strong>Eco-Friendly Alternative Found!</strong>
+                        <p>Your dish soap is running low. Try "EcoClean Refillable Soap" - 40% less plastic waste!</p>
+                        <div class="notification-time">4 hours ago</div>
+                        <button class="btn btn-small">View Alternative</button>
+                    </div>
+                </div>
+                <div class="notification-item notification-info">
+                    <div class="notification-icon">📍</div>
+                    <div class="notification-content">
+                        <strong>New Zero-Waste Store Nearby!</strong>
+                        <p>"Green Living" just opened 0.8 km from your location. Check out their bulk refills!</p>
+                        <div class="notification-time">1 day ago</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features Grid -->
+            <div class="features-grid">
+                <!-- Include Meal Planner Component -->
+                <div id="meal-planner-container">
+                    <!-- Meal planner content will be loaded here -->
+                </div>
+
+                <!-- Include Carbon Calculator Component -->
+                <div id="carbon-calculator-container">
+                    <!-- Carbon calculator content will be loaded here -->
+                </div>
+
+                <!-- Enhanced Smart Inventory Tracker -->
+                <div class="feature-card" id="enhanced-inventory">
+                    <div class="feature-header">
+                        <div class="feature-icon">📦</div>
+                        <div class="feature-title">Smart Inventory Tracker</div>
+                    </div>
+                    
+                    <div class="inventory-container">
+                        <!-- Enhanced Search and Filters -->
+                        <div class="inventory-controls">
+                            <div class="search-container">
+                                <input type="search" placeholder="Search items..." data-search-type="inventory">
+                                <button class="btn btn-small" id="scan-barcode">📱 Scan</button>
+                            </div>
+                            <div class="filter-tabs">
+                                <button class="filter-tab active" data-filter="all">All Items</button>
+                                <button class="filter-tab" data-filter="low">Low Stock</button>
+                                <button class="filter-tab" data-filter="expiring">Expiring Soon</button>
+                                <button class="filter-tab" data-filter="eco">Eco Products</button>
+                            </div>
+                        </div>
+
+                        <div class="tab-container">
+                            <div class="tab-buttons">
+                                <button class="tab-button active" onclick="switchTab('pantry')">Pantry</button>
+                                <button class="tab-button" onclick="switchTab('cleaning')">Cleaning</button>
+                                <button class="tab-button" onclick="switchTab('clothing')">Clothing</button>
+                                <button class="tab-button" onclick="switchTab('personal-care')">Personal Care</button>
+                            </div>
+
+                            <div id="pantry-tab" class="tab-content active">
+                                <div class="inventory-item" data-searchable="inventory">
+                                    <div class="item-info">
+                                        <div class="item-image">🍚</div>
+                                        <div class="item-details">
+                                            <div class="item-name"><strong>Organic Rice</strong></div>
+                                            <div class="item-meta">
+                                                <span class="quantity-low">Running Low (2 days left)</span>
+                                                <span class="eco-badge eco-high">🌱 Organic</span>
+                                            </div>
+                                            <div class="item-stats">
+                                                <small>Added: 2 weeks ago • Used: 85%</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="btn btn-outline btn-small">Reorder</button>
+                                        <button class="btn btn-small">Scan New</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="inventory-item" data-searchable="inventory">
+                                    <div class="item-info">
+                                        <div class="item-image">🥫</div>
+                                        <div class="item-details">
+                                            <div class="item-name"><strong>Canned Tomatoes</strong></div>
+                                            <div class="item-meta">
+                                                <span class="quantity-out">Out of Stock</span>
+                                                <span class="eco-badge eco-medium">♻️ Recyclable</span>
+                                            </div>
+                                            <div class="item-stats">
+                                                <small>Last used: 3 days ago</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="btn">Add to List</button>
+                                        <button class="btn btn-outline btn-small">Find Eco Alt</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="inventory-item" data-searchable="inventory">
+                                    <div class="item-info">
+                                        <div class="item-image">🌾</div>
+                                        <div class="item-details">
+                                            <div class="item-name"><strong>Quinoa</strong></div>
+                                            <div class="item-meta">
+                                                <span class="quantity-normal">Good Stock (2.5kg)</span>
+                                                <span class="eco-badge eco-high">🌱 Fair Trade</span>
+                                            </div>
+                                            <div class="item-stats">
+                                                <small>Expires: 8 months • Usage: 30%</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="btn btn-outline btn-small">Recipe Ideas</button>
+                                        <button class="btn btn-small">Update</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="eco-suggestion">
+                                    <strong>💡 Eco Suggestion:</strong> Try buying tomatoes in glass jars instead of cans - they're infinitely recyclable and often tastier! We found 3 local stores with this option.
+                                    <button class="btn btn-small mt-1">Find Stores</button>
+                                </div>
+                            </div>
+
+                            <div id="cleaning-tab" class="tab-content">
+                                <div class="inventory-item" data-searchable="inventory">
+                                    <div class="item-info">
+                                        <div class="item-image">🧽</div>
+                                        <div class="item-details">
+                                            <div class="item-name"><strong>Eco Dish Soap</strong></div>
+                                            <div class="item-meta">
+                                                <span class="quantity-low">Almost Empty (5% left)</span>
+                                                <span class="eco-badge eco-high">🌿 Biodegradable</span>
+                                            </div>
+                                            <div class="item-stats">
+                                                <small>Refill station nearby • 90% plastic reduction</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="btn">Find Refill</button>
+                                        <button class="btn btn-outline btn-small">Auto-Order</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="eco-suggestion">
+                                    <strong>🌿 Recommended:</strong> "Dr. Bronner's Liquid Soap" - concentrated, biodegradable, and comes in recyclable packaging! Available for refill at 2 nearby stores.
+                                </div>
+                            </div>
+
+                            <div id="clothing-tab" class="tab-content">
+                                <div class="inventory-item" data-searchable="inventory">
+                                    <div class="item-info">
+                                        <div class="item-image">👕</div>
+                                        <div class="item-details">
+                                            <div class="item-name"><strong>Work Shirts</strong></div>
+                                            <div class="item-meta">
+                                                <span class="quantity-normal">5 items tracked</span>
+                                                <span class="eco-badge eco-medium">♻️ Secondhand</span>
+                                            </div>
+                                            <div class="item-stats">
+                                                <small>Avg wear: 3x/week • Condition: Good</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="btn btn-outline btn-small">Repair Tips</button>
+                                        <button class="btn btn-small">Add Item</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="personal-care-tab" class="tab-content">
+                                <div class="inventory-item" data-searchable="inventory">
+                                    <div class="item-info">
+                                        <div class="item-image">🧴</div>
+                                        <div class="item-details">
+                                            <div class="item-name"><strong>Bamboo Toothbrush</strong></div>
+                                            <div class="item-meta">
+                                                <span class="quantity-normal">2 months old</span>
+                                                <span class="eco-badge eco-high">🌱 Compostable</span>
+                                            </div>
+                                            <div class="item-stats">
+                                                <small>Replace in: 1 month • Plastic saved: 95%</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item-actions">
+                                        <button class="btn btn-outline btn-small">Set Reminder</button>
+                                        <button class="btn btn-small">Reorder</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Waste Tracking -->
+                        <div class="waste-tracking">
+                            <h5>📸 Waste Reduction Tracker</h5>
+                            <div class="waste-stats">
+                                <div class="waste-stat">
+                                    <span class="waste-number">2.3kg</span>
+                                    <span class="waste-label">Food waste prevented</span>
+                                </div>
+                                <div class="waste-stat">
+                                    <span class="waste-number">45</span>
+                                    <span class="waste-label">Plastic items avoided</span>
+                                </div>
+                                <div class="waste-stat">
+                                    <span class="waste-number">€28</span>
+                                    <span class="waste-label">Money saved</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-outline" id="log-waste">+ Log Waste Reduction</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Eco Challenges -->
+                <div class="feature-card" id="enhanced-challenges">
+                    <div class="feature-header">
+                        <div class="feature-icon">🏆</div>
+                        <div class="feature-title">Eco Habit Challenges</div>
+                    </div>
+                    
+                    <div class="challenges-container">
+                        <!-- Challenge Categories -->
+                        <div class="challenge-categories">
+                            <button class="category-btn active" data-category="all">All</button>
+                            <button class="category-btn" data-category="food">Food</button>
+                            <button class="category-btn" data-category="energy">Energy</button>
+                            <button class="category-btn" data-category="transport">Transport</button>
+                            <button class="category-btn" data-category="waste">Waste</button>
+                        </div>
+
+                        <!-- Active Challenges -->
+                        <div class="challenge-section">
+                            <h5>🔥 Active Challenges</h5>
+                            
+                            <div class="challenge-item challenge-active">
+                                <div class="challenge-content">
+                                    <div class="challenge-header">
+                                        <strong>Zero Waste Week</strong>
+                                        <div class="badge badge-active">Active</div>
+                                    </div>
+                                    <div class="challenge-progress-container">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 60%;"></div>
+                                        </div>
+                                        <div class="progress-details">
+                                            <span>Day 4 of 7 • 60% Complete</span>
+                                            <span class="challenge-impact">2.1kg waste prevented! 🌟</span>
+                                        </div>
+                                    </div>
+                                    <div class="challenge-actions">
+                                        <button class="btn btn-small">Log Progress</button>
+                                        <button class="btn btn-outline btn-small">Share</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="challenge-item challenge-active">
+                                <div class="challenge-content">
+                                    <div class="challenge-header">
+                                        <strong>Bike to Work Challenge</strong>
+                                        <div class="badge badge-active">Active</div>
+                                    </div>
+                                    <div class="challenge-progress-container">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 40%;"></div>
+                                        </div>
+                                        <div class="progress-details">
+                                            <span>2 of 5 days • 40% Complete</span>
+                                            <span class="challenge-impact">4.2kg CO₂ saved! 🚲</span>
+                                        </div>
+                                    </div>
+                                    <div class="challenge-actions">
+                                        <button class="btn btn-small">Log Trip</button>
+                                        <button class="btn btn-outline btn-small">View Route</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Available Challenges -->
+                        <div class="challenge-section">
+                            <h5>💫 Available Challenges</h5>
+                            
+                            <div class="challenge-item">
+                                <div class="challenge-content">
+                                    <div class="challenge-header">
+                                        <strong>Meatless March</strong>
+                                        <div class="challenge-difficulty">🌟 Beginner</div>
+                                    </div>
+                                    <div class="challenge-description">
+                                        <p>Reduce meat consumption by 75% this month</p>
+                                        <div class="challenge-stats">
+                                            <span>🌱 Est. 12kg CO₂ reduction</span>
+                                            <span>👥 1,247 participants</span>
+                                        </div>
+                                    </div>
+                                    <div class="challenge-actions">
+                                        <button class="btn">Join Challenge</button>
+                                        <button class="btn btn-outline btn-small">Learn More</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="challenge-item">
+                                <div class="challenge-content">
+                                    <div class="challenge-header">
+                                        <strong>Energy Detective</strong>
+                                        <div class="challenge-difficulty">🌟🌟 Intermediate</div>
+                                    </div>
+                                    <div class="challenge-description">
+                                        <p>Reduce home energy consumption by 20%</p>
+                                        <div class="challenge-stats">
+                                            <span>⚡ Est. €45 savings</span>
+                                            <span>👥 892 participants</span>
+                                        </div>
+                                    </div>
+                                    <div class="challenge-actions">
+                                        <button class="btn">Join Challenge</button>
+                                        <button class="btn btn-outline btn-small">Preview</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Completed Challenges & Badges -->
+                        <div class="achievements-section">
+                            <h5>🏅 Your Achievements</h5>
+                            <div class="badges-container">
+                                <div class="badge-item">
+                                    <div class="badge badge-gold">Waste Warrior</div>
+                                    <small>Completed 5 waste reduction challenges</small>
+                                </div>
+                                <div class="badge-item">
+                                    <div class="badge badge-silver">Transport Hero</div>
+                                    <small>500km of eco-friendly transport</small>
+                                </div>
+                                <div class="badge-item">
+                                    <div class="badge badge-bronze">Green Beginner</div>
+                                    <small>First challenge completed</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Social Features -->
+                        <div class="social-challenges">
+                            <h5>👥 Challenge with Friends</h5>
+                            <div class="friend-challenge">
+                                <div class="friend-info">
+                                    <div class="friend-avatar">JS</div>
+                                    <div>
+                                        <div><strong>Jamie Smith</strong></div>
+                                        <small>Invited you to "Plastic-Free Week"</small>
+                                    </div>
+                                </div>
+                                <div class="challenge-actions">
+                                    <button class="btn btn-small">Accept</button>
+                                    <button class="btn btn-outline btn-small">Decline</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget Tracker -->
+                <div class="feature-card" id="budget-tracker">
+                    <div class="feature-header">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-title">Sustainability Budget Tracker</div>
+                    </div>
+                    
+                    <div class="budget-container">
+                        <div class="budget-overview">
+                            <div class="budget-stat">
+                                <div class="stat-number">€156</div>
+                                <div class="stat-label">Money Saved This Month</div>
+                                <div class="stat-trend positive">+€23 vs last month</div>
+                            </div>
+                            <div class="budget-breakdown">
+                                <div class="breakdown-item">
+                                    <span>🚲 Transport savings</span>
+                                    <span>€45</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>🏠 Energy efficiency</span>
+                                    <span>€38</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>🍽️ Food waste reduction</span>
+                                    <span>€32</span>
+                                </div>
+                                <div class="breakdown-item">
+                                    <span>♻️ Secondhand purchases</span>
+                                    <span>€41</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="savings-goals">
+                            <h5>🎯 Savings Goals</h5>
+                            <div class="goal-item">
+                                <div class="goal-info">
+                                    <span>Emergency Fund from Eco Savings</span>
+                                    <div class="progress-bar">
+                                        <div class="progress-fill" style="width: 31%;"></div>
+                                    </div>
+                                    <small>€465 / €1,500 goal</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="eco-investments">
+                            <h5>🌱 Eco Investments</h5>
+                            <div class="investment-item">
+                                <span>Solar panel fund</span>
+                                <span>€1,250</span>
+                            </div>
+                            <div class="investment-item">
+                                <span>E-bike purchase</span>
+                                <span>€850</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Local Sustainability Map -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">🗺️</div>
+                        <div class="feature-title">Local Sustainability Map</div>
+                    </div>
+                    
+                    <div class="map-container">
+                        <div class="map-placeholder">🗺️ Interactive Map View</div>
+                        <div class="map-pin map-pin-1" title="Green Living Store">🏪</div>
+                        <div class="map-pin map-pin-2" title="Community Garden">🌱</div>
+                        <div class="map-pin map-pin-3" title="Recycling Center">♻️</div>
+                    </div>
+                    
+                    <div class="nearby-places">
+                        <div class="place-item">
+                            <div>
+                                <strong>🏪 Green Living Store</strong>
+                                <br><small>Zero-waste bulk goods, refills • ⭐ 4.8/5</small>
+                            </div>
+                            <div class="place-distance">0.8 km</div>
+                        </div>
+                        <div class="place-item">
+                            <div>
+                                <strong>♻️ Community Recycling</strong>
+                                <br><small>Electronics, batteries, textiles • ⭐ 4.6/5</small>
+                            </div>
+                            <div class="place-distance">1.2 km</div>
+                        </div>
+                        <div class="place-item">
+                            <div>
+                                <strong>🌱 Urban Farm Co-op</strong>
+                                <br><small>Fresh local produce • ⭐ 4.9/5</small>
+                            </div>
+                            <div class="place-distance">2.1 km</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Community Swap & Gift -->
+                <div class="feature-card">
+                    <div class="feature-header">
+                        <div class="feature-icon">🔄</div>
+                        <div class="feature-title">Community Swap & Gift</div>
+                    </div>
+                    
+                    <div class="tab-container">
+                        <div class="tab-buttons">
+                            <button class="tab-button active" onclick="switchSwapTab('available')">Available</button>
+                            <button class="tab-button" onclick="switchSwapTab('my-items')">My Items</button>
+                            <button class="tab-button" onclick="switchSwapTab('requests')">Requests</button>
+                        </div>
+
+                        <div id="available-swap" class="tab-content active">
+                            <div class="swap-item">
+                                <div class="swap-image">📚</div>
+                                <div class="swap-details">
+                                    <strong>Cookbook Collection</strong>
+                                    <div class="swap-user">Posted by Sarah M. • ⭐ 4.9</div>
+                                    <div class="swap-distance">1.5 km away</div>
+                                    <div class="swap-condition">Excellent condition • 12 books</div>
+                                </div>
+                                <button class="btn btn-small">Request</button>
+                            </div>
+                            <div class="swap-item">
+                                <div class="swap-image">🧥</div>
+                                <div class="swap-details">
+                                    <strong>Winter Jacket (Size M)</strong>
+                                    <div class="swap-user">Posted by Mike D. • ⭐ 4.7</div>
+                                    <div class="swap-distance">0.9 km away</div>
+                                    <div class="swap-condition">Good condition • Waterproof</div>
+                                </div>
+                                <button class="btn btn-small">Request</button>
+                            </div>
+                        </div>
+
+                        <div id="my-items-swap" class="tab-content">
+                            <div class="swap-item">
+                                <div class="swap-image">🎮</div>
+                                <div class="swap-details">
+                                    <strong>Board Games Set</strong>
+                                    <div class="swap-user">Your posting</div>
+                                    <div style="color: #4caf50;">3 people interested</div>
+                                </div>
+                                <button class="btn btn-outline btn-small">Manage</button>
+                            </div>
+                            <button class="btn" style="width: 100%; margin-top: 1rem;">+ Add New Item</button>
+                        </div>
+
+                        <div id="requests-swap" class="tab-content">
+                            <div class="swap-item">
+                                <div class="swap-image">🪴</div>
+                                <div class="swap-details">
+                                    <strong>Looking for: Plant Pots</strong>
+                                    <div class="swap-user">Posted by Emma K. • ⭐ 5.0</div>
+                                    <div class="swap-distance">0.7 km away</div>
+                                </div>
+                                <button class="btn btn-small">I Have This!</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Features Preview -->
+                <div class="feature-card premium-feature">
+                    <div class="feature-header">
+                        <div class="feature-icon">📊</div>
+                        <div class="feature-title">Advanced Analytics <span class="premium-badge">PREMIUM</span></div>
+                    </div>
+                    
+                    <div style="text-align: center; padding: 2rem;">
+                        <div style="font-size: 3rem; margin-bottom: 1rem;">📈</div>
+                        <h3>Detailed Impact Tracking</h3>
+                        <p style="margin: 1rem 0; color: #666;">
+                            See your carbon footprint reduction, water savings, and waste prevention over time with detailed charts and insights.
+                        </p>
+                        <div class="premium-features-list">
+                            <div class="premium-feature-item">✨ Advanced carbon tracking with ML insights</div>
+                            <div class="premium-feature-item">📊 Detailed sustainability reports</div>
+                            <div class="premium-feature-item">🎯 Personalized improvement recommendations</div>
+                            <div class="premium-feature-item">📱 Smart home integration</div>
+                        </div>
+                        <button class="btn" style="background: linear-gradient(45deg, #4caf50, #8bc34a);">
+                            Upgrade to Premium - €4.99/month
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Bar -->
+            <div class="action-bar">
+                <a href="#scan" class="action-btn">
+                    <div class="action-btn-icon">📱</div>
+                    <div>Scan Item</div>
+                </a>
+                <a href="#meal-planner" class="action-btn">
+                    <div class="action-btn-icon">🍽️</div>
+                    <div>Plan Meals</div>
+                </a>
+                <a href="#carbon-calculator" class="action-btn">
+                    <div class="action-btn-icon">🌍</div>
+                    <div>Track Carbon</div>
+                </a>
+                <a href="#challenges" class="action-btn">
+                    <div class="action-btn-icon">🏆</div>
+                    <div>Challenges</div>
+                </a>
+                <a href="#community" class="action-btn">
+                    <div class="action-btn-icon">💬</div>
+                    <div>Community</div>
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>About GreenHabit</h4>
+                    <a href="#">Our Mission</a>
+                    <a href="#">How It Works</a>
+                    <a href="#">Success Stories</a>
+                    <a href="#">Blog</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <a href="#">Meal Planner</a>
+                    <a href="#">Carbon Tracker</a>
+                    <a href="#">Inventory Manager</a>
+                    <a href="#">Eco Challenges</a>
+                    <a href="#">Community Swap</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Community Forum</a>
+                    <a href="#">API Documentation</a>
+                    <a href="#">Status Page</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <a href="#">Newsletter</a>
+                    <a href="#">Social Media</a>
+                    <a href="#">Partner with Us</a>
+                    <a href="#">Affiliate Program</a>
+                    <a href="#">Press Kit</a>
+                </div>
+            </div>
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid #4a7c59;">
+                <p>&copy; 2024 GreenHabit. Making sustainable living simple and rewarding. 🌱</p>
+                <p><small>Version 2.0 • Built with ❤️ for the planet</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Component Templates -->
+    <div id="component-templates" style="display: none;">
+        <!-- Meal planner and carbon calculator components will be loaded here -->
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/meal-planner.js"></script>
+    <script src="js/carbon-calculator.js"></script>
+    
+    <!-- Component Loader -->
+    <script>
+        // Load component HTML files
+        document.addEventListener('DOMContentLoaded', async function() {
+            try {
+                // Load meal planner component
+                const mealPlannerResponse = await fetch('components/meal-planner.html');
+                const mealPlannerHTML = await mealPlannerResponse.text();
+                document.getElementById('meal-planner-container').innerHTML = mealPlannerHTML;
+
+                // Load carbon calculator component
+                const carbonCalculatorResponse = await fetch('components/carbon-calculator.html');
+                const carbonCalculatorHTML = await carbonCalculatorResponse.text();
+                document.getElementById('carbon-calculator-container').innerHTML = carbonCalculatorHTML;
+
+                console.log('🌱 All components loaded successfully!');
+            } catch (error) {
+                console.warn('⚠️ Some components could not be loaded:', error);
+                // Fallback: show message or hide components
+            }
+        });
+
+        // Enhanced tab switching with history support
+        function switchTab(tabName) {
+            // Update URL without page reload
+            history.replaceState(null, null, `#${tabName}`);
+            
+            // Original tab switching logic
+            const tabContainer = event.target.closest('.feature-card');
+            
+            // Remove active class from all tab buttons in this container
+            tabContainer.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Remove active class from all tab contents in this container
+            tabContainer.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Add active class to clicked button
+            event.target.classList.add('active');
+
+            // Show selected tab content
+            const targetTab = tabContainer.querySelector(`#${tabName}-tab`);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+        }
+
+        function switchSwapTab(tabName) {
+            // Similar enhanced logic for swap tabs
+            const tabContainer = event.target.closest('.tab-container');
+            
+            tabContainer.querySelectorAll('.tab-button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            tabContainer.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+
+            event.target.classList.add('active');
+            
+            const targetTab = document.getElementById(`${tabName}-swap`);
+            if (targetTab) {
+                targetTab.classList.add('active');
+            }
+        }
+
+        // Service Worker Registration for PWA
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('sw.js')
+                    .then(function(registration) {
+                        console.log('🌱 PWA: Service Worker registered successfully:', registration.scope);
+                    })
+                    .catch(function(error) {
+                        console.log('⚠️ PWA: Service Worker registration failed:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html> 

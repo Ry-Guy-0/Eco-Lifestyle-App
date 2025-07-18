@@ -1,0 +1,326 @@
+<!-- Carbon Footprint Calculator -->
+<div class="feature-card" id="carbon-calculator">
+    <div class="feature-header">
+        <div class="feature-icon">🌍</div>
+        <div class="feature-title">Carbon Footprint Calculator</div>
+    </div>
+    
+    <div class="carbon-calculator-container">
+        <!-- Current Month Overview -->
+        <div class="carbon-overview">
+            <div class="overview-stats">
+                <div class="carbon-stat main-stat">
+                    <div class="stat-icon">🌍</div>
+                    <div class="stat-content">
+                        <div class="stat-number">2.4 kg</div>
+                        <div class="stat-label">CO₂ This Month</div>
+                        <div class="stat-trend positive">-18% vs last month</div>
+                    </div>
+                </div>
+                <div class="carbon-stat">
+                    <div class="stat-number">18.7 kg</div>
+                    <div class="stat-label">Avoided Emissions</div>
+                </div>
+                <div class="carbon-stat">
+                    <div class="stat-number">3.2 trees</div>
+                    <div class="stat-label">Trees Equivalent</div>
+                </div>
+            </div>
+            
+            <div class="carbon-chart">
+                <canvas id="carbon-trend-chart" width="400" height="200"></canvas>
+            </div>
+        </div>
+
+        <!-- Category Breakdown -->
+        <div class="carbon-categories">
+            <h4>📊 Emissions by Category</h4>
+            
+            <div class="category-grid">
+                <div class="category-card" data-category="transportation">
+                    <div class="category-header">
+                        <div class="category-icon">🚗</div>
+                        <div class="category-info">
+                            <h5>Transportation</h5>
+                            <div class="category-emissions">1.2 kg CO₂</div>
+                        </div>
+                        <button class="btn btn-small add-transport">+ Add Trip</button>
+                    </div>
+                    
+                    <div class="category-breakdown">
+                        <div class="breakdown-item">
+                            <span class="item-type">🚌 Public Transport</span>
+                            <span class="item-amount">0.3 kg</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="item-type">🚗 Car (shared)</span>
+                            <span class="item-amount">0.7 kg</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="item-type">🚲 Cycling</span>
+                            <span class="item-amount eco-positive">-0.2 kg saved</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-suggestions">
+                        <div class="suggestion">
+                            <strong>💡 Tip:</strong> Cycling instead of driving saves 2.3 kg CO₂ per 10km
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="food">
+                    <div class="category-header">
+                        <div class="category-icon">🍽️</div>
+                        <div class="category-info">
+                            <h5>Food & Diet</h5>
+                            <div class="category-emissions">0.8 kg CO₂</div>
+                        </div>
+                        <button class="btn btn-small add-meal-calc">+ Add Meal</button>
+                    </div>
+                    
+                    <div class="category-breakdown">
+                        <div class="breakdown-item">
+                            <span class="item-type">🥬 Plant-based meals</span>
+                            <span class="item-amount">0.3 kg</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="item-type">🧀 Dairy products</span>
+                            <span class="item-amount">0.4 kg</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="item-type">🐟 Fish (sustainable)</span>
+                            <span class="item-amount">0.1 kg</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-suggestions">
+                        <div class="suggestion">
+                            <strong>🌱 Tip:</strong> Your plant-forward diet saved 12.4 kg CO₂ this month!
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="energy">
+                    <div class="category-header">
+                        <div class="category-icon">💡</div>
+                        <div class="category-info">
+                            <h5>Home Energy</h5>
+                            <div class="category-emissions">0.4 kg CO₂</div>
+                        </div>
+                        <button class="btn btn-small add-energy">+ Log Usage</button>
+                    </div>
+                    
+                    <div class="category-breakdown">
+                        <div class="breakdown-item">
+                            <span class="item-type">🔌 Electricity</span>
+                            <span class="item-amount">0.2 kg</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="item-type">🔥 Heating</span>
+                            <span class="item-amount">0.1 kg</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="item-type">☀️ Solar offset</span>
+                            <span class="item-amount eco-positive">-0.3 kg saved</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-suggestions">
+                        <div class="suggestion">
+                            <strong>⚡ Tip:</strong> LED bulbs can reduce lighting emissions by 80%
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="category-card" data-category="shopping">
+                    <div class="category-header">
+                        <div class="category-icon">🛍️</div>
+                        <div class="category-info">
+                            <h5>Shopping & Consumption</h5>
+                            <div class="category-emissions">0.6 kg CO₂</div>
+                        </div>
+                        <button class="btn btn-small add-purchase">+ Add Purchase</button>
+                    </div>
+                    
+                    <div class="category-breakdown">
+                        <div class="breakdown-item">
+                            <span class="item-type">👕 Secondhand clothing</span>
+                            <span class="item-amount">0.1 kg</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="item-type">📱 Electronics</span>
+                            <span class="item-amount">0.4 kg</span>
+                        </div>
+                        <div class="breakdown-item">
+                            <span class="item-type">♻️ Recycled products</span>
+                            <span class="item-amount eco-positive">-0.2 kg saved</span>
+                        </div>
+                    </div>
+                    
+                    <div class="category-suggestions">
+                        <div class="suggestion">
+                            <strong>♻️ Tip:</strong> Buying secondhand saves an average of 6.4 kg CO₂ per item
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Goal Setting & Challenges -->
+        <div class="carbon-goals">
+            <h4>🎯 Carbon Reduction Goals</h4>
+            
+            <div class="goals-container">
+                <div class="current-goal">
+                    <div class="goal-header">
+                        <h5>Monthly Goal: Reduce by 25%</h5>
+                        <span class="goal-status on-track">On Track</span>
+                    </div>
+                    <div class="goal-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 72%;"></div>
+                        </div>
+                        <div class="progress-text">72% achieved • 8 days remaining</div>
+                    </div>
+                </div>
+                
+                <div class="goal-suggestions">
+                    <h6>🚀 Quick Wins to Reach Your Goal:</h6>
+                    <div class="suggestion-list">
+                        <div class="quick-win">
+                            <span class="win-action">🚲 Bike to work twice this week</span>
+                            <span class="win-impact">-1.4 kg CO₂</span>
+                        </div>
+                        <div class="quick-win">
+                            <span class="win-action">🌱 Have 3 plant-based dinners</span>
+                            <span class="win-impact">-0.9 kg CO₂</span>
+                        </div>
+                        <div class="quick-win">
+                            <span class="win-action">💡 Switch to LED bulbs</span>
+                            <span class="win-impact">-0.3 kg CO₂</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carbon Offset Options -->
+        <div class="carbon-offset">
+            <h4>🌳 Carbon Offset & Compensation</h4>
+            
+            <div class="offset-summary">
+                <div class="offset-stat">
+                    <span class="offset-label">Unavoidable emissions this month:</span>
+                    <span class="offset-value">2.4 kg CO₂</span>
+                </div>
+                <div class="offset-stat">
+                    <span class="offset-label">Suggested offset cost:</span>
+                    <span class="offset-value">€0.48</span>
+                </div>
+            </div>
+            
+            <div class="offset-options">
+                <div class="offset-option">
+                    <div class="offset-icon">🌳</div>
+                    <div class="offset-details">
+                        <h6>Tree Planting Program</h6>
+                        <p>Support reforestation in local communities</p>
+                        <div class="offset-impact">Offsets 2.4 kg CO₂ • Plants 0.5 trees</div>
+                    </div>
+                    <button class="btn btn-outline">€0.48 - Offset</button>
+                </div>
+                
+                <div class="offset-option">
+                    <div class="offset-icon">💨</div>
+                    <div class="offset-details">
+                        <h6>Renewable Energy</h6>
+                        <p>Support wind and solar energy projects</p>
+                        <div class="offset-impact">Offsets 2.4 kg CO₂ • 3.2 kWh clean energy</div>
+                    </div>
+                    <button class="btn btn-outline">€0.38 - Offset</button>
+                </div>
+                
+                <div class="offset-option">
+                    <div class="offset-icon">🏠</div>
+                    <div class="offset-details">
+                        <h6>Local Community Projects</h6>
+                        <p>Energy efficiency upgrades in social housing</p>
+                        <div class="offset-impact">Offsets 2.4 kg CO₂ • Helps 1.2 households</div>
+                    </div>
+                    <button class="btn btn-outline">€0.52 - Offset</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparison & Benchmarks -->
+        <div class="carbon-comparison">
+            <h4>📈 How You Compare</h4>
+            
+            <div class="comparison-charts">
+                <div class="comparison-item">
+                    <h6>vs National Average</h6>
+                    <div class="comparison-bar">
+                        <div class="bar-section your-emissions" style="width: 25%;">
+                            <span>You: 2.4kg</span>
+                        </div>
+                        <div class="bar-section average-emissions" style="width: 75%;">
+                            <span>Average: 9.6kg</span>
+                        </div>
+                    </div>
+                    <div class="comparison-result positive">75% below average! 🌟</div>
+                </div>
+                
+                <div class="comparison-item">
+                    <h6>vs GreenHabit Community</h6>
+                    <div class="comparison-bar">
+                        <div class="bar-section your-emissions" style="width: 40%;">
+                            <span>You: 2.4kg</span>
+                        </div>
+                        <div class="bar-section community-emissions" style="width: 60%;">
+                            <span>Community: 3.6kg</span>
+                        </div>
+                    </div>
+                    <div class="comparison-result positive">33% below community average!</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Quick Add Modals -->
+<div id="transport-modal" class="modal hidden">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Add Transportation</h3>
+            <button class="modal-close">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="transport-form">
+                <div class="form-group">
+                    <label>Transport Type</label>
+                    <select id="transport-type">
+                        <option value="walking">🚶 Walking</option>
+                        <option value="cycling">🚲 Cycling</option>
+                        <option value="public">🚌 Public Transport</option>
+                        <option value="car-solo">🚗 Car (solo)</option>
+                        <option value="car-shared">🚗 Car (shared)</option>
+                        <option value="train">🚄 Train</option>
+                        <option value="flight">✈️ Flight</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Distance (km)</label>
+                    <input type="number" id="transport-distance" min="0" step="0.1">
+                </div>
+                <div class="emissions-preview">
+                    <span id="calculated-emissions">Estimated: 0.0 kg CO₂</span>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-outline" id="cancel-transport">Cancel</button>
+            <button class="btn" id="save-transport">Add Trip</button>
+        </div>
+    </div>
+</div> 
